@@ -1,0 +1,2 @@
+# obiekty_js
+ćwiczenie 
