@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <title>Zadanie dodatkowe</title>
+</head>
+<body>
+    <div id="g">
+        <img src="danie.jpg" id="zdjecie">
+        <p>Danie i cena</p>
+    </div>
+    <div id="d">
+        <button id="btn1">Sałatka</button>
+        <button id="btn2">Zupa</button>
+        <button id="btn3">Kawa</button>
+    </div>
+<script>
+    function Posilek(nazwa, cena){
+        this.nazwa = nazwa
+        this.cena = cena
+    }
+
+    const salatka = new Posilek('Sałatka', 10.50)
+    const zupa = new Posilek('Zupa', 12.65)
+    const kawa = new Posilek('Kawa', 8)
+
+    Posilek.prototype.dane = function(){
+            console.log(this.nazwa + " kosztuje " + this.cena + " zł.")
+        }
+
+    salatka.dane();
+    zupa.dane();
+    kawa.dane();
+
+    var zdjecia = new Array("salatka.jpg", "zupa.jpg", "kawa.jpg");
+
+    btn1.onclick = function(){
+        document.querySelector("p").innerText = salatka.nazwa + " kosztuje " + salatka.cena + " zł.";
+        zdjecie.src = zdjecia[0];
+    }
+    btn2.onclick = function(){
+        document.querySelector("p").innerText = zupa.nazwa + " kosztuje " + zupa.cena + " zł.";
+        zdjecie.src = zdjecia[1];
+    }
+    btn3.onclick = function(){
+        document.querySelector("p").innerText = kawa.nazwa + " kosztuje " + kawa.cena + " zł.";
+        zdjecie.src = zdjecia[2];
+    }
+</script>
+</body>
+</html>
